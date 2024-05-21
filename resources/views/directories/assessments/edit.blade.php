@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Crypt;
 @endphp
 <x-app-layout>
 <div class="mt-6 max-w-lg mx-auto">
-    <form action="{{ route('assessments.update', Crypt::decryptString($encryptedId)) }}" method="POST">
+    <form action="{{ route('assessments.update', Crypt::decryptString($assessment)) }}" method="POST">
         
         @method('PUT')
         @csrf
