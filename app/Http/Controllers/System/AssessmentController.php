@@ -57,7 +57,8 @@ class AssessmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $assessment = assessment::findOrFail($id);
+        
+        $assessment = assessment::findOrFail(Crypt::decrypt($id));
         $assessment->update($request->all());
         return redirect()->route('directories.assessments.index');
     }
