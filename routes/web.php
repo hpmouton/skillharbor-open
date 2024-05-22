@@ -89,6 +89,15 @@ Route::middleware([
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/{id}', [SystemReports::class, 'show'])->name('reports.show');
 
+    // JCP Routes 
+    Route::get('/directories/jcp', [JCPController::class, 'index'])->name('directories.jcp.index');
+    Route::get('/directories/jcp/create', [JCPController::class, 'create'])->name('directories.jcp.create');    
+    Route::post('/directories/jcp', [JCPController::class, 'store'])->name('directories.jcp.store');    
+    Route::get('/directories/jcp/{id}', [JCPController::class, 'show'])->name('directories.jcp.show');
+    Route::get('/directories/jcp/{id}/edit', [JCPController::class, 'edit'])->name('directories.jcp.edit');
+    Route::put('/directories/jcp/{id}', [JCPController::class, 'update'])->name('directories.jcp.update');
+    
+
 
 
 
