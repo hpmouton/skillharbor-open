@@ -39,7 +39,8 @@ class AssessmentController extends Controller
      */
     public function show(string $id)
     {
-        $assesment = assessment::findOrFail($id);
+        $assessment = assessment::findOrFail(Crypt::decrypt($id));
+        Crypt::encrypt($assessment->id);
         return view('summaries.assesment.show', compact('assesment'));
     }
 
@@ -60,7 +61,7 @@ class AssessmentController extends Controller
         
         $assessment = assessment::findOrFail(Crypt::decrypt($id));
         $assessment->update($request->all());
-        return redirect()->route('directories.assessments.index');
+        return redirect()->route('directories.assessments.index', compact('assessment', 'id'));
     }
 
     /**
