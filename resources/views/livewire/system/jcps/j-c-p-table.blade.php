@@ -64,7 +64,7 @@
                                 </x-slot>
                                 <x-slot name="content">
                                     <!-- Directory Management -->
-                                    <x-dropdown-link href="#">
+                                    <x-dropdown-link href="{{ route ('jcp.edit', ['jcp' => $jcp->id])}}">
                                         Edit
                                     </x-dropdown-link>
 

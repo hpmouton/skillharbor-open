@@ -98,6 +98,7 @@
                                             Delete
                                         </x-dropdown-link>
                                     </form>
+
                                 </x-slot>
                             </x-dropdown>
 
