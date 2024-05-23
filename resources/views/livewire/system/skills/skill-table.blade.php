@@ -85,7 +85,7 @@
                                 </x-slot>
                                 <x-slot name="content">
                                     <!-- Directory Management -->
-                                    <x-dropdown-link href="{{route('skills.edit', ['skill'=> $skill->id])}}">
+                                    <x-dropdown-link href="{{route('skills.edit', ['skill'=> Crypt::encrypt($skill->id)])}}">
                                         Edit
                                     </x-dropdown-link>
 
