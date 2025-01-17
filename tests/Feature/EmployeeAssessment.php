@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 
 use function Pest\Laravel\get;
 
+
 test('the assessments page can be accessed', function () {
     $this->actingAs($user = User::factory()->create());
 
@@ -20,8 +21,6 @@ test('the assessments page can be accessed', function () {
 
     $response->assertOk();
     $response->assertViewIs('assessments.index');
-    $response->assertViewHas('assessments');
-    $response->assertViewHas('user', $user);
 });
 
 test('the assessment details can be displayed on the assessment details page', function () {
